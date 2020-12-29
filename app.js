@@ -1,6 +1,6 @@
 let min = 1, 
     max = 10, 
-    winningNumber = 2,
+    winningNumber = getRandomNum(min, max),
     guessesLeft = 3;
 
 const game = document.querySelector('#game'),
@@ -32,6 +32,10 @@ guessBtn.addEventListener('click', function(){
     }
 })
 
+function getRandomNum(min, max) {
+    return Math.ceil(Math.random() * ((max - min) + 1));
+}
+
 function setMessage(msg, color) {
     message.style.color = color;
     message.textContent = msg
@@ -53,3 +57,4 @@ game.addEventListener('mousedown', function(e){
         window.location.reload();
     }
 });
+
