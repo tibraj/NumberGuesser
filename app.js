@@ -47,3 +47,9 @@ function gameOver(won, msg) {
     guessBtn.value = 'Play Again';
     guessBtn.className += 'play-again';
 }
+
+game.addEventListener('mousedown', function(e){
+    if(e.target.className === 'play-again'){
+        window.location.reload();
+    }
+});
