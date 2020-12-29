@@ -23,7 +23,14 @@ guessBtn.addEventListener('click', function(){
         guessInput.style.borderColor = 'green';
         setMessage(`${winningNumber} is Correct!`, 'green');
     } else {
+        guessesLeft -= 1;
+        if(guessesLeft === 0){
+            guessInput.disabled = true;
+            guessInput.style.borderColor = 'red';
+            setMessage(`Game Over. The correct number was ${winningNumber}`, 'red');
+        } else {
 
+        }
     }
 })
 
